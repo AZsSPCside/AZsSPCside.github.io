@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		ul {
+			list-style-type: none;
+		}
+		li span {
+			cursor: pointer;
+			user-select: none;
+		}
+	</style>
+</head>
+<body>
+
+<!-- 1 приховати елемент з id="text" -->
+<div id="text">Цей текст зникне</div>
+<button onclick="document.getElementById('text').style.display = 'none'">Приховати</button>
+
+<!-- 2 приховати саму кнопку -->
+<button onclick="this.style.display = 'none'">Сховати кнопку</button>
+
+<!-- 3 дерево з розгортанням/згортанням -->
+<ul>
+	<li>
+		<span onclick="toggle(this)">Фрукти</span>
+		<ul>
+			<li>Яблуко</li>
+			<li>Банан</li>
+		</ul>
+	</li>
+	<li>
+		<span onclick="toggle(this)">Овочі</span>
+		<ul>
+			<li>Морква</li>
+			<li>Картопля</li>
+		</ul>
+	</li>
+</ul>
+
+<script>
+	function toggle(el) {
+		const childList = el.nextElementSibling;
+		if (childList) {
+			childList.hidden = !childList.hidden;
+		}
+	}
+</script>
+</body>
+</html>
