@@ -1,0 +1,177 @@
+/* ===== CSS Variables ===== */
+:root {
+    --color-white: #ffffff;
+    --color-main: #2B7FFF;
+    --color-dark: #011c44;
+
+    --color-gray: #4a4a4a;
+    --color-lightgray: #747272;
+    --color-second-dark: #011f4a;
+    --color-accent: #ffd02b;
+
+    --effect-1: box-shadow: 0px 4px 4px 0px #A8C6F561;
+    --effect-2: box-shadow: 0px 4px 4px 0px #A8C6F533;
+}
+
+/* ===== Fonts ===== */
+@import url('src/fonts/fonts.css');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Play', Arial, sans-serif;
+    background: var(--color-white);
+    color: var(--color-dark);
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== Headings ===== */
+
+.main-title,
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 16px;
+}
+
+
+.section-title,
+h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 24px;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-dark);
+}
+
+/* ===== Text ===== */
+.main-subtitle {
+    font-size: 20px;
+    color: var(--color-main);
+    font-weight: 400;
+}
+
+.about-text {
+    font-size: 18px;
+    color: var(--color-dark);
+}
+
+.accent {
+    color: var(--color-main);
+    font-weight: 700;
+}
+
+.about-benefits li {
+    color: var(--color-dark);
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.main-note {
+    color: var(--color-lightgray);
+    font-size: 14px;
+}
+
+/* ===== Links ===== */
+a {
+    color: var(--color-main);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--color-dark);
+}
+
+/* ===== Buttons ===== */
+.main-btn,
+button {
+    background: var(--color-main);
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 12px 32px;
+    font-size: 18px;
+    font-family: 'Play', Arial, sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.main-btn:hover,
+button:hover {
+    background: var(--color-dark);
+}
+
+/* ===== Backgrounds ===== */
+header,
+footer {
+    background: var(--color-second-dark);
+    color: #fff;
+}
+
+.why-item,
+.procedure-card {
+    background: var(--color-accent);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 8px;
+}
+
+.images_before_after img {
+    border-radius: 16px;
+    margin: 8px;
+    max-width: 180px;
+}
+
+/* ===== Forms ===== */
+.contact-form input,
+.contact-form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-family: 'Play', Arial, sans-serif;
+}
+
+.contact-form input {
+    padding: 10px;
+    border: 1px solid var(--color-lightgray);
+    border-radius: 8px;
+}
+
+.contact-form button {
+    background: var(--color-main);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: var(--color-dark);
+}
+
+/* ===== Utility ===== */
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-main);
+    letter-spacing: 2px;
+}
+
+.footer-bottom {
+    margin-top: 24px;
+    color: var(--color-lightgray);
+    font-size: 14px;
+}
