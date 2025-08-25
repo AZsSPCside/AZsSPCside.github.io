@@ -1,0 +1,18 @@
+.procedures-section {
+  &__container {
+    margin-bottom: 96px;
+
+    @media screen and (max-width: $desktop) {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__swiper-container {
+    width: 100%;
+    overflow: hidden;
+  }
+}

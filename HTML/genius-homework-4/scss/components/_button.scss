@@ -1,0 +1,21 @@
+.button-section {
+  background-color: var(--primary-color-light);
+  font-weight: 600;
+  color: var(--primary-color-white);
+  font-family: "Roboto", sans-serif;
+  border: 0;
+  border-radius: 32px;
+  width: 219px;
+  height: 53px;
+  padding: 16px 32px;
+}
+
+.button-section:hover {
+  color: var(--brand-color-blue);
+  background-color: transparent;
+  border: 2px solid var(--primary-color-light);
+}
+
+.modal-btn-open {
+  margin-bottom: 14px;
+}

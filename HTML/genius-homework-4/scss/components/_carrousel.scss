@@ -1,0 +1,74 @@
+.carrousel {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  &__list {
+    width: fit-content;
+  }
+
+  &__button.next {
+    transform: rotate(180deg);
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: transparent;
+    padding: 0;
+    border: 1px solid var(--brand-color-gray);
+    cursor: pointer;
+    fill: var(--brand-color-blue);
+    flex-shrink: 0;
+  }
+
+  &__button:hover {
+    background-color: var(--primary-color-light);
+    fill: var(--primary-color-white);
+    border-color: var(--primary-color-white);
+  }
+
+  &__button.prev {
+    @media screen and (max-width: $desktop) {
+      display: none;
+    }
+  }
+
+  &__button.next {
+    @media screen and (max-width: $desktop) {
+      display: none;
+    }
+  }
+}
+
+.carts {
+  position: relative;
+  height: 456px;
+  border-radius: 4px 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  background-image: linear-gradient(180deg, #011c4400 50%, #011c44b9 90%, var(--brand-color-blue) 100%);
+
+  &__text {
+    color: var(--primary-color-white);
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: 400;
+  }
+
+  &__img {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

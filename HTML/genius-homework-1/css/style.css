@@ -1,0 +1,157 @@
+@font-face {
+  font-display: swap;
+  font-family: "Play";
+  font-weight: 400;
+  src: url("../fonts/play-v19-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Play";
+  font-weight: 700;
+  src: url("../fonts/play-v19-latin-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-weight: 400;
+  src: url("../fonts/roboto-v47-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-weight: 600;
+  src: url("../fonts/roboto-v47-latin-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  font-weight: 700;
+  src: url("../fonts/roboto-v47-latin-700.woff2") format("woff2");
+}
+
+:root {
+  --primary-color-white: #ffffff;
+  --primary-color-light: #2b7fff;
+  --primary-color-dark: #011c44;
+  --brand-color-blue: #011f4a;
+  --brand-color-yellow: #ffd02b;
+  --brand-color-gray-light: #747272;
+  --brand-color-gray: #4a4a4a;
+  --dark: #000000;
+}
+
+body {
+  color: var(--primary-color-dark);
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.section-titel {
+  font-family: "Play";
+  font-weight: 700;
+  font-size: 64px;
+}
+
+.section-span {
+  color: var(--primary-color-light);
+}
+
+footer {
+  background-color: var(--brand-color-blue);
+}
+
+.button-head-section {
+  background-color: var(--primary-color-light);
+  font-weight: 600;
+  color: var(--primary-color-white);
+}
+
+.button-contact-section {
+  background-color: var(--primary-color-light);
+  color: #faf4ea;
+  font-weight: 600;
+}
+
+.link {
+  color: var(--primary-color-dark);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--primary-color-light);
+  font-weight: 700;
+}
+
+.footer-link {
+  color: var(--primary-color-white);
+  font-size: 16px;
+}
+
+.head-titel {
+  color: var(--primary-color-light);
+  font-family: "Play";
+  font-weight: 700;
+  font-size: 140px;
+  line-height: 0.8;
+}
+
+.head-section-text {
+  font-size: 12px;
+  color: var(--brand-color-gray);
+}
+
+.information-p-span {
+  font-weight: 600;
+}
+
+.information-section-text {
+  font-size: 22px;
+}
+
+.choise-text {
+  color: var(--dark);
+}
+
+.procedures-article {
+  color: var(--primary-color-white);
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.contact-text {
+  color: var(--primary-color-white);
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.contact-p-span {
+  color: var(--primary-color-light);
+}
+
+.contact-agree {
+  color: var(--brand-color-gray-light);
+  font-size: 12px;
+}
+
+.contact-div {
+  background-color: var(--brand-color-blue);
+}
+
+.footer-agree {
+  color: var(--brand-color-gray-light);
+  font-size: 13px;
+}

@@ -1,0 +1,170 @@
+.backdrop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  transition: opacity 0.3s, visibility 0.3s;
+  color: var(--primary-color-white);
+  z-index: 2;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal {
+  width: 100%;
+  max-width: 732px;
+  position: relative;
+  height: 100%;
+  max-height: 682px;
+  background-color: var(--primary-color-dark);
+  padding: 42px 144px;
+  border-radius: 48px;
+  overflow: auto;
+  z-index: 1;
+
+  @media screen and (max-width: $desktop) {
+    padding: 42px;
+  }
+
+  &::before {
+    content: "";
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url("data:image/svg+xml,%3Csvg%20width%3D%22495%22%20height%3D%22411%22%20viewBox%3D%220%200%20495%20411%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M22.977%20152.605C13.1234%20108.408%20-16.4945%2051.24%2022.6088%2022.5792C62.3244%20-6.53048%20120.178%2060.5545%20168.856%2045.6827C283.184%2010.7535%20361.261%20-163.638%20468.232%20-113.566C562.57%20-69.4068%20400.807%2057.8677%20397.277%20152.605C394.009%20240.336%20539.072%20365.692%20449.034%20401.707C344.236%20443.625%20272.363%20288.353%20168.856%20243.971C138.273%20230.858%2098.7528%20256.996%2070.9953%20239.611C40.1151%20220.27%2030.3214%20185.547%2022.977%20152.605Z%22%20stroke%3D%22%23011F4A%22%20stroke-width%3D%224%22/%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg%20width%3D%22389%22%20height%3D%22333%22%20viewBox%3D%220%200%20389%20333%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M-92.4689%2078.656C-100.96%207.56588%20-168.986%20-93.1292%20-98.3993%20-127.58C-20.608%20-165.546%2045.2438%20-33.7366%20133.999%20-31.8735C217.832%20-30.1137%20284.116%20-156.872%20355.657%20-118.048C421.4%20-82.3707%20363.984%2014.3792%20337.673%2078.656C320.631%20120.288%20266.945%20134.747%20237.53%20170.532C195.887%20221.193%20201.877%20309.006%20133.999%20326.438C64.4664%20344.294%20-8.25533%20295.25%20-53.8532%20245.36C-95.716%20199.558%20-85.4639%20137.302%20-92.4689%2078.656Z%22%20stroke%3D%22%23011F4A%22%20stroke-width%3D%224%22/%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg%20width%3D%22469%22%20height%3D%22658%22%20viewBox%3D%220%200%20469%20658%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M-138.664%20385.417C-144.243%20312.206%20-169.619%20237.416%20-128.488%20173.851C-75.6518%2092.1975%2003.69003%20-6.91631%20108.872%202.86815C214.021%2012.6494%20233.727%20141.42%20301.37%20213.838C357.557%20273.992%20462.675%20307.206%20466.194%20385.417C469.752%20464.479%20385.21%20520.206%20317.457%20571.334C256.957%20616.989%20188.143%20655.304%20108.872%20655.062C29.8458%20654.822%20-48.2481%20624.584%20-98.2933%20570.069C-144.609%20519.617%20-133.708%20450.457%20-138.664%20385.417Z%22%20stroke%3D%22%23011F4A%22%20stroke-width%3D%224%22/%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg%20width%3D%22559%22%20height%3D%22296%22%20viewBox%3D%220%200%20559%20296%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M30.3752%20270.882C23.5278%20178.898%20-42.0429%2032.877%2056.9048%2005.90099C175.356%20-26.3922%20230.902%20173.321%20354.341%20182.56C455.797%20190.154%20514.646%2006.33923%20605.67%2046.976C685.276%2082.515%20553.986%20191.572%20552.179%20270.882C550.455%20346.569%20640.62%20421.637%20595.673%20485.882C549.292%20552.176%20441.962%20550.692%20354.341%20553.664C262.025%20556.796%20159.89%20560.502%2093.9022%20502.903C27.5492%20444.985%2036.5222%20353.459%2030.3752%20270.882Z%22%20stroke%3D%22%23011F4A%22%20stroke-width%3D%224%22/%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg%20width%3D%2292%22%20height%3D%22304%22%20viewBox%3D%220%200%2092%20304%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M-441.113%20155.612C-435.721%20121.017%20-396.09%20102.931%20-377.64%2072.0951C-341.383%2011.4978%20-359.782%20-95.8773%20-283.685%20-107.504C-211.836%20-118.481%20-207.816%20-2.87677%20-150.729%2037.4273C-76.347%2089.9423%2082.536%2071.3707%2088.9913%20155.611C95.299%20237.927%20-45.7024%20259.151%20-131.293%20291.073C-180.004%20309.24%20-231.132%20299.371%20-283.685%20294.606C-327.909%20290.597%20-376.327%20293.842%20-407.866%20265.996C-439.472%20238.091%20-447.228%20194.835%20-441.113%20155.612Z%22%20stroke%3D%22%23011F4A%22%20stroke-width%3D%224%22/%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg%20width%3D%2292%22%20height%3D%22304%22%20viewBox%3D%220%200%2092%20304%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M-441.113%20155.612C-435.721%20121.017%20-396.09%20102.931%20-377.64%2072.0951C-341.383%2011.4978%20-359.782%20-95.8773%20-283.685%20-107.504C-211.836%20-118.481%20-207.816%20-2.87677%20-150.729%2037.4273C-76.347%2089.9423%2082.536%2071.3707%2088.9913%20155.611C95.299%20237.927%20-45.7024%20259.151%20-131.293%20291.073C-180.004%20309.24%20-231.132%20299.371%20-283.685%20294.606C-327.909%20290.597%20-376.327%20293.842%20-407.866%20265.996C-439.472%20238.091%20-447.228%20194.835%20-441.113%20155.612Z%22%20stroke%3D%22%23011F4A%22%20stroke-width%3D%224%22/%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg%20width%3D%22559%22%20height%3D%22296%22%20viewBox%3D%220%200%20559%20296%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M30.3752%20270.882C23.5278%20178.898%20-42.0429%2032.877%2056.9048%2005.90099C175.356%20-26.3922%20230.902%20173.321%20354.341%20182.56C455.797%20190.154%20514.646%2006.33923%20605.67%2046.976C685.276%2082.515%20553.986%20191.572%20552.179%20270.882C550.455%20346.569%20640.62%20421.637%20595.673%20485.882C549.292%20552.176%20441.962%20550.692%20354.341%20553.664C262.025%20556.796%20159.89%20560.502%2093.9022%20502.903C27.5492%20444.985%2036.5222%20353.459%2030.3752%20270.882Z%22%20stroke%3D%22%23011F4A%22%20stroke-width%3D%224%22/%3E%3C/svg%3E");
+    background-size: 531px 495px, 464px 515px, 720px 800px, 552px 480px, auto,
+      auto, 200px 150px;
+    background-position: top 0 right 0, top 0 left 0, top 40px left 0,
+      bottom 0 right 0, top 70px left 0, bottom 20px left 0, bottom 0 right 0;
+  }
+
+  &__title {
+    font-family: "Play";
+    font-weight: 700;
+    font-size: 64px;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.2;
+    z-index: 2;
+
+    @media screen and (max-width: $desktop) {
+      font-family: "Roboto", sans-serif;
+      font-size: 32px;
+    }
+  }
+
+  &__text {
+    font-size: 22px;
+    font-weight: 600;
+    max-width: 310px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 32px;
+
+    @media screen and (max-width: $desktop) {
+      font-family: "Roboto", sans-serif;
+      font-size: 18px;
+    }
+  }
+
+  &__btn-close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    fill: var(--primary-color-white);
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__inputs {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  &__input {
+    padding: 18px 32px;
+    border: 2px solid var(--brand-color-gray-light);
+    border-radius: 32px;
+    max-width: 310px;
+    width: 100%;
+    margin-bottom: 24px;
+    background-color: transparent;
+    color: var(--primary-color-white);
+    transition: color 0.2s ease;
+    transition: background-color 0.2s ease;
+
+    &::placeholder {
+      color: var(--primary-color-white);
+      font-size: 13px;
+    }
+
+    &:focus {
+      background-color: var(--brand-color-gray-light);
+      outline: none;
+    }
+  }
+
+  &__field {
+    margin-bottom: 24px;
+    height: 52px;
+    max-width: 378px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__button {
+    margin: 0 auto 8px;
+    display: block;
+    width: 236px;
+  }
+
+  &__button:hover {
+    color: var(--primary-color-white);
+  }
+
+  &__text-end {
+    color: var(--brand-color-gray-light);
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+}
+
+.user-label {
+  display: block;
+}

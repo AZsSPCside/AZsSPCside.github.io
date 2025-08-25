@@ -1,0 +1,24 @@
+.fatty {
+  font-weight: 600;
+}
+
+.brand-color {
+  color: var(--primary-color-light);
+}
+
+.section-title {
+  font-family: "Play", sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+
+  @media screen and (max-width: $desktop) {
+    font-family: "Roboto", sans-serif;
+    font-size: 32px;
+  }
+}
+
+.underline {
+  color: var(--brand-color-gray-light);
+  text-underline-offset: 2px;
+  text-decoration: underline;
+}
